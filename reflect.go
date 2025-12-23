@@ -45,13 +45,29 @@ func isValid(value any) (result bool) {
 	return result
 }
 
+// func isValidMax(value any) (result bool){
+// 	result = true
+// 	m := reflect.TypeOf(value)
+// 	for i := 0; i < m.NumField(); i++ {
+// 		t := m.Field(i)
+// 		if t.Tag.Get("required") == "max" {
+// 			data := reflect.ValueOf(value).Field(i).Interface()
+// 			result = data != 10
+// 			if result == false {
+// 				return result
+// 			}
+// 		}
+// 	}
+// 	return result
+// }
+
 func main()  {
 	readField(Sample{"Agus", "Inkopad"})
 	readField(Person{"gusa",})
 
 	sample := Sample{
 		Name: "Balik",
-		Address: "",
+		Address: "isi",
 	}
 	fmt.Println(isValid(sample))
 }
